@@ -1,6 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 
-// Define report schema
+/**
+ * A report is a timed gospatial record
+ */
 const reportSchema = new Schema({
   title: {
     type: String,
@@ -12,11 +14,13 @@ const reportSchema = new Schema({
     required: true,
   },
   position: {
-    type: [Number],
-    index: '2d',
-    required: true,
+    type: { type: String },
+    coordinates: [],
   },
 });
 
+// Add 2dsphere index
+reportSchema.index({ position: '2dsphere' });
+
 // Export Mongoose model
-export default mongoose.model('report', reportSchema);
+export default mongoose.model('reports', reportSchema);
