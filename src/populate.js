@@ -39,7 +39,7 @@ const reports = [
 ];
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/reports');
+mongoose.connect('mongodb://localhost/reports', { useNewUrlParser: true });
 
 // Go through each movie
 reports.map((data) => {
