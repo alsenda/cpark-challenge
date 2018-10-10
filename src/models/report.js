@@ -14,7 +14,10 @@ const reportSchema = new Schema({
     required: true,
   },
   position: {
-    type: { type: String },
+    type: {
+      type: String,
+      required: true,
+    },
     coordinates: [],
   },
 });
