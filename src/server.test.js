@@ -1,6 +1,6 @@
+/* eslint-env mocha */
 import request from 'supertest';
 import app from './server';
-import { expect } from 'chai';
 
 // process.on('unhandledRejection', error => {});
 
@@ -34,6 +34,8 @@ describe('Server', () => {
       const report = { title: 'Test', position: { type: 'Point', coordinates } };
       response = server.post('/v1/report').send(report);
     });
+
+    after(() => response);
 
     it('should create a valid report');
 

@@ -10,7 +10,11 @@ import dbConfig from './config/database';
 const app = express();
 
 // Connecting to the database
-mongoose.connect(dbConfig.url, { useNewUrlParser: true });
+const connectOpt = { useNewUrlParser: true };
+mongoose.connect(dbConfig.url, connectOpt).then(
+  () => { /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ },
+  error => error,
+);
 
 // Logger that outputs all requests into the console
 app.use(morgan('combined'));
