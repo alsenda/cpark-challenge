@@ -1,0 +1,22 @@
+# Logs
+backend/logs
+
+# Docs
+backend/docs/
+backend/dist/
+
+# Dependency directories
+backend/node_modules/
+frontend/node_modules/
+
+# Optional npm cache directory
+backend/.npm
+
+# Optional eslint cache
+backend/.eslintcache
+
+# dotenv environment variables file
+backend/.env
+
+# production
+frontend/build/
